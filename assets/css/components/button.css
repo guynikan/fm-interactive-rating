@@ -1,0 +1,71 @@
+.btn-primary {
+  text-align: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: var(--border-radius-20);
+  background-color: var(--primary-button-bg);
+  color: var(--primary-button-color);
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-button-hover-bg);
+  color: var(--primary-button-hover-color);
+}
+
+.btn-light {
+  all: unset;
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: var(--light-button-bg);
+  color: var(--light-button-color);
+  text-align: center;
+  padding: 8px;
+  height: 33px;
+  width: 33px;
+  /* PONTO DE ATENÇÃO: USO DE TRANSITIONS */
+  transition: var(--transition);
+}
+
+.btn-light label,
+.btn-light input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.btn-light__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-light input[type="radio"] {
+  opacity: 0.011;
+  z-index: 100;
+}
+
+.btn-light input[type="radio"]:checked+label {
+  background-color: var(--light-button-active-bg);
+  color: var(--light-button-active-color);
+  border-radius: 50%;
+}
+
+.btn-light label {
+  cursor: pointer;
+  z-index: 90;
+  line-height: 1.8em;
+}
+
+.btn-light:hover {
+  background-color: var(--light-button-hover-bg);
+  color: var(--light-button-hover-color);
+}

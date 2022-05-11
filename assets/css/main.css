@@ -1,0 +1,20 @@
+/* 2. Tipografia */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+/* PONTO DE ATENÇÃO: Uso dos imports de stylesheets */
+@import "utils.css";
+@import "tokens.css";
+@import "base.css";
+@import "components/card.css";
+@import "components/button.css";
+@import "components/rate.css";
+
+.attribution {
+  color: white;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

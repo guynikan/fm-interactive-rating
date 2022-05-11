@@ -1,0 +1,44 @@
+:root {
+  /* PONTO DE ATENÇÃO: Organização dos tokens */
+  /* 1. Cores */
+  /* Tokens */
+  --primary: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --black: #0f0f0f;
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --border-radius-20: 20px;
+  --border-radius-25: 25px;
+
+  /* 3. Contextos */
+  /* Contextual Tokens */
+  --body-bg: var(--black);
+  --card-bg-init: var(--dark-blue);
+  --card-bg-last: var(--very-dark-blue);
+
+  --primary-button-bg: var(--primary);
+  --primary-button-hover-bg: var(--white);
+  --primary-button-color: var(--white);
+  --primary-button-hover-color: var(--primary);
+
+  --light-button-bg: var(--dark-blue);
+  --light-button-active-bg: var(--light-grey);
+  --light-button-hover-bg: var(--primary);
+  --light-button-color: var(--light-grey);
+  --light-button-color-alt: var(--primary);
+  --light-button-active-color: var(--white);
+  --light-button-hover-color: var(--white);
+
+  --light-badge-bg: var(--dark-blue);
+  --light-badge-color: var(--primary);
+
+  --h1-color: var(--white);
+  --h1-font-weight: 700;
+  --h1-font-size: 1.5rem;
+  --p-color: var(--light-grey);
+  --p-font-size: 15px;
+
+  --transition: all ease-out 0.4s;
+}

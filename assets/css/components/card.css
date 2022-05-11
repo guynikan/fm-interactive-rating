@@ -1,0 +1,56 @@
+.card {
+  margin: 5rem;
+  background-image: radial-gradient(farthest-side at 50% 10%,
+      var(--card-bg-init),
+      var(--card-bg-last));
+  border-radius: var(--border-radius-25);
+  padding: 2rem;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header--center {
+  position: inherit;
+  visibility: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-badge {
+  font-size: 16px;
+  background-color: var(--light-badge-bg);
+  color: var(--light-badge-color);
+  border-radius: var(--border-radius-25);
+  padding: 7px 10px;
+  margin: 20px 0px;
+}
+
+.card-title {
+  color: var(--h1-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+}
+
+.card-content {
+  position: inherit;
+  visibility: inherit;
+  display: grid;
+  place-items: center;
+  /* PONTO DE ATENÇÃO: O width do card precisa ser exato.
+    PONTA EXTRA: Usar a unidade de medida apropriada pra box de texto (ch)
+    para essa fonte específica, por se tratar de uma fonte "fixed-width" (ela é inspirada
+    numa fonte monospaced) */
+  width: 32ch;
+}
+
+.card-content p {
+  color: var(--p-color);
+  font-size: var(--p-font-size);
+}

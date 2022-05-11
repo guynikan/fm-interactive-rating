@@ -1,0 +1,18 @@
+/* Functional classes */
+.hide {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  height: fit-content;
+  transition: var(--transition);
+}
+
+.text-center {
+  text-align: center;
+}

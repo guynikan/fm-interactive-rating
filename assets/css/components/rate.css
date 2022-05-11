@@ -1,0 +1,19 @@
+.rating {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.rate-label {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--light-button-bg);
+  color: var(--light-button-color-alt);
+  padding: 8px;
+  height: 26px;
+  width: 26px;
+}
+

@@ -1,0 +1,12 @@
+h1,
+p,
+button {
+  all: unset;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: var(--body-bg);
+  font-family: "Overpass", sans-serif;
+}

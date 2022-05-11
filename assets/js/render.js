@@ -6,9 +6,9 @@ export function initRender(){
   handleSubmit()
 
   for (let i = 1; i <= 5; i++) {
-    rating.innerHTML += `<div class="rate-button">
+    rating.innerHTML += `<div class="btn-light">
     <input type="radio" id="${i}" value="${i}" name="rate" />
-    <label class="rate-button__label" for="${i}">${i}</label>
+    <label class="btn-light__label" for="${i}">${i}</label>
   </div>`;
   }
 }
