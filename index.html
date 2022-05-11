@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+    <script type="module" src="main.js"></script>
+    <style>
+      /* 2. Tipografia */
+      @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+      :root {
+        /* PONTO DE ATENÇÃO: Organização dos tokens */
+        /* 1. Cores */
+        /* Tokens */
+        --primary: hsl(25, 97%, 53%);
+        --white: hsl(0, 0%, 100%);
+        --black: #0f0f0f;
+        --light-grey: hsl(217, 12%, 63%);
+        --medium-grey: hsl(216, 12%, 54%);
+        --dark-blue: hsl(213, 19%, 18%);
+        --very-dark-blue: hsl(216, 12%, 8%);
+        --border-radius-20: 20px;
+        --border-radius-25: 25px;
+
+        /* 3. Contextos */
+        /* Contextual Tokens */
+        --body-bg: var(--black);
+        --card-bg-init: var(--dark-blue);
+        --card-bg-last: var(--very-dark-blue);
+
+        --primary-button-bg: var(--primary);
+        --primary-button-hover-bg: var(--white);
+        --primary-button-color: var(--white);
+        --primary-button-hover-color: var(--primary);
+
+        --light-button-bg: var(--dark-blue);
+        --light-button-active-bg: var(--light-grey);
+        --light-button-hover-bg: var(--primary);
+        --light-button-color: var(--light-grey);
+        --light-button-color-alt: var(--primary);
+        --light-button-active-color: var(--white);
+        --light-button-hover-color: var(--white);
+
+        --h1-color: var(--white);
+        --h1-font-weight: 700;
+        --h1-font-size: 1.5rem;
+        --p-color: var(--light-grey);
+        --p-font-size: 15px;
+
+        --transition: all ease-out 0.4s;
+      }
+
+      h1,
+      p,
+      button {
+        all: unset;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        background-color: var(--body-bg);
+        font-family: "Overpass", sans-serif;
+      }
+
+      .card {
+        margin: 5rem;
+        background-image: radial-gradient(
+          farthest-side at 50% 10%,
+          var(--card-bg-init),
+          var(--card-bg-last)
+        );
+        border-radius: var(--border-radius-25);
+        padding: 2rem;
+      }
+
+      .card-header {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-title {
+        color: var(--h1-color);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: var(--h1-font-size);
+        font-weight: var(--h1-font-weight);
+      }
+
+      .card-content {
+        display: grid;
+        place-items: center;
+        /* PONTO DE ATENÇÃO: O width do card precisa ser exato.
+        PONTA EXTRA: Usar a unidade de medida apropriada pra box de texto (ch)
+        para essa fonte específica, por se tratar de uma fonte "fixed-width" (ela é inspirada
+        numa fonte monospaced) */
+        width: 32ch;
+      }
+
+      .card-content p {
+        color: var(--p-color);
+        font-size: var(--p-font-size);
+      }
+
+      .btn-primary {
+        text-align: center;
+        letter-spacing: 1px;
+        cursor: pointer;
+        width: 100%;
+        border-radius: var(--border-radius-20);
+        background-color: var(--primary-button-bg);
+        color: var(--primary-button-color);
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: var(--transition);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-button-hover-bg);
+        color: var(--primary-button-hover-color);
+      }
+
+      .rating {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .rate-button {
+        all: unset;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: var(--light-button-bg);
+        color: var(--light-button-color);
+        text-align: center;
+        padding: 8px;
+        height: 33px;
+        width: 33px;
+        /* PONTO DE ATENÇÃO: USO DE TRANSITIONS */
+        transition: var(--transition);
+        float: left;
+        position: relative;
+      }
+
+
+      .rate-button label,
+      .rate-button input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .rate-button__label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .rate-button input[type="radio"] {
+        opacity: 0.011;
+        z-index: 100;
+      }
+
+      .rate-button input[type="radio"]:checked + label {
+        background-color: var(--light-button-active-bg);
+        color: var(--light-button-active-color);
+        border-radius: 50%;
+      }
+
+      .rate-button label {
+        cursor: pointer;
+        z-index: 90;
+        line-height: 1.8em;
+      }
+
+      .rate-button:hover {
+        background-color: var(--light-button-hover-bg);
+        color: var(--light-button-hover-color);
+      }
+
+      .rate-button--label {
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background-color: var(--light-button-bg);
+        color: var(--light-button-color-alt);
+        padding: 8px;
+        height: 26px;
+        width: 26px;
+      }
+
+      .rate-button--label img {
+        vertical-align: middle;
+      }
+
+      .attribution {
+        color: white;
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 4. HTML structure  -->
+    <main>
+      <article class="card">
+        <header class="card-header">
+          <div class="rate-button--label">
+            <!-- PONTO DE ATENÇÃO: Como é feito o embed do svg. -->
+            <img src="/images/icon-star.svg" alt="" />
+          </div>
+          <h1 class="card-title">How did we do?</h1>
+        </header>
+        <form class="card-content" id="form">
+          <p>
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+          <div class="rating"></div>
+          <button class="btn-primary">Submit</button>
+        </form>
+      </article>
+    </main>
+
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+
+    You selected
+    <!-- Add rating here -->
+    out of 5 Thank you! We appreciate you taking the time to give a rating. If
+    you ever need more support, don’t hesitate to get in touch!
+
+    <!-- Thank you state end -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
